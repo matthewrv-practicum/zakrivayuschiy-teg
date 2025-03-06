@@ -1,1 +1,24 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --primary-font: "Inter";
+  --accent-font: "PressStart2P";
+  --font-weight: 400;
+  --heading-font-weight: 700;
+
+  --bg-color: #fff;
+  --main-color: #000;
+
+  --bg-pattern: url("./svg/pattern-light.svg");
+  --border-width: 2px;
+  --mult: calc((100dvi - 375px) / 1065);
+  --content-inline-size: clamp(
+    calc(375px),
+    calc(375px + 325 * var(--mult)),
+    calc(700px)
+  );
+}
+
+@media (width <= 375px) {
+  :root {
+    --content-inline-size: calc(100%);
+  }
+}
