@@ -1,13 +1,13 @@
 :root {
   --primary-font: "Inter";
   --accent-font: "PressStart2P";
-  --font-weight: 400;
-  --heading-font-weight: 700;
+  --font-weight: 465;
+  --heading-font-weight: 785;
 
-  --bg-color: #fff;
-  --main-color: #000;
+  --bg-color: #000;
+  --main-color: #00cc14;
 
-  --bg-pattern: url("./svg/pattern-light.svg");
+  --bg-pattern: url("../svg/pattern-dark.svg");
   --border-width: 2px;
   --mult: calc((100dvi - 375px) / 1065);
   --content-inline-size: clamp(

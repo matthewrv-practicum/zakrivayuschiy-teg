@@ -43,7 +43,7 @@
 }
 
 .content-section {
-  border: currentColor solid 2px;
+  border: currentColor solid var(--border-width);
   background-color: var(--bg-color, #fff);
   margin: auto;
   inline-size: var(--content-inline-size);
@@ -156,7 +156,7 @@
 .card__picture {
   display: block;
   width: 100%;
-  border-block: currentColor solid 2px;
+  border-block: currentColor solid var(--border-width);
 }
 
 .card__picture-image {
@@ -191,7 +191,7 @@
 
 .card__icon-button {
   background-color: transparent;
-  border: transparent solid 2px;
+  border: transparent solid var(--border-width);
   transition: border-color 0.3s ease;
 }
 
@@ -209,7 +209,6 @@
 
 .like-icon {
   display: block;
-  block-size: 100%;
   aspect-ratio: 1 / 1;
   block-size: 34px;
   inline-size: 34px;
@@ -293,7 +292,7 @@
 .button {
   position: relative;
   background-color: var(--bg-color, #fff);
-  border: var(--main-color, #000) 2px solid;
+  border: var(--main-color, #000) var(--border-width) solid;
   font-family: var(--accent-font);
   font-size: 0.875rem;
   font-variation-settings: "wght" var(--heading-font-weight, 400);
