@@ -85,14 +85,41 @@
 }
 
 .theme-menu__button {
+  position: relative;
   border: none;
   background-color: transparent;
   text-transform: uppercase;
-  padding: 0;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 60%;
 }
 
 .theme-menu__button:disabled {
   opacity: 60%;
+  pointer-events: none;
+}
+
+.theme-menu__button::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0 0;
+  inset-block: 100% 0;
+  border: currentColor solid 1px;
+  scale: 0;
+  transform-origin: 0;
+  transition: scale 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  scale: 1;
 }
 
 .theme-menu__item {
@@ -103,6 +130,17 @@
   content: "▶";
   position: absolute;
   transform: translate(calc(-100% - 5px));
+  animation: selected-button 0.5s infinite ease-in-out alternate;
+}
+
+@keyframes selected-button {
+  0% {
+    transform: translate(calc(-100% - 5px));
+  }
+
+  100% {
+    transform: translate(calc(-100% - 9px));
+  }
 }
 
 .card__title {
@@ -151,17 +189,50 @@
 }
 
 .button {
+  position: relative;
   background-color: var(--bg-color, #fff);
-  border: currentColor 2px solid;
+  border: var(--main-color) 2px solid;
   font-family: var(--accent-font);
   font-size: 0.875rem;
   font-variation-settings: "wght" var(--heading-font-weight, 400);
+  transition: box-shadow 0.3s ease;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: currentColor 2px 2px 0;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  inset: 0;
+  scale: 0 1;
+  transition: scale 0.5s ease-in-out;
+  transform-origin: 0 0;
+}
+
+.button:hover {
+  color: var(--bg-color, #fff);
+  cursor: pointer;
+}
+
+.button:hover::after {
+  scale: 1 1;
+}
+
+.button__text {
+  position: relative;
+  transition: color 1s ease;
+  z-index: 1;
 }
 
 .card__icon-button {
   border: none;
   position: relative;
-  inset-block-start: 2px;
+  inset-block-start: 4px;
+  background-color: transparent;
 }
 
 .like-icon {
