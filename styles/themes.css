@@ -6,6 +6,9 @@
   --main-color: #00cc14;
 
   --bg-pattern: url("../svg/pattern-dark.svg");
+
+  --heart-contour-color: var(--main-color);
+  --heart-fill-color: #ff0000;
 }
 
 .page.theme-light {
@@ -16,6 +19,9 @@
   --main-color: #000;
 
   --bg-pattern: url("../svg/pattern-light.svg");
+
+  --heart-contour-color: var(--main-color);
+  --heart-fill-color: #ff0000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,5 +33,8 @@
     --main-color: #00cc14;
 
     --bg-pattern: url("../svg/pattern-dark.svg");
+
+    --heart-contour-color: var(--main-color);
+    --heart-fill-color: #ff0000;
   }
 }

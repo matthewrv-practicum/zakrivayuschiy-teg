@@ -15,6 +15,9 @@
     calc(375px + 325 * var(--mult)),
     calc(700px)
   );
+
+  --heart-contour-color: var(--main-color);
+  --heart-fill-color: #ff0000;
 }
 
 @media (width <= 375px) {
