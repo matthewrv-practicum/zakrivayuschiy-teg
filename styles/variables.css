@@ -1,1 +1,27 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --primary-font: "Inter";
+  --accent-font: "PressStart2P";
+  --font-weight: 465;
+  --heading-font-weight: 785;
+
+  --bg-color: #000;
+  --main-color: #00cc14;
+
+  --bg-pattern: url("../svg/pattern-dark.svg");
+  --border-width: 2px;
+  --mult: calc((100dvi - 375px) / 1065);
+  --content-inline-size: clamp(
+    calc(375px),
+    calc(375px + 325 * var(--mult)),
+    calc(700px)
+  );
+
+  --heart-contour-color: var(--main-color);
+  --heart-fill-color: #ff0000;
+}
+
+@media (width <= 375px) {
+  :root {
+    --content-inline-size: calc(100%);
+  }
+}
