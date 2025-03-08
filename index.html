@@ -49,7 +49,7 @@
       </nav>
     </header>
     <main>
-      <section class="content-section card">
+      <article class="content-section card">
         <h2 class="card__title">
           Фритрек и нулевой спринт: Подготовка к работе
         </h2>
@@ -76,6 +76,7 @@
         <div class="card__buttons">
           <button class="card__icon-button" type="button">
             <svg
+              aria-hidden="true"
               class="like-icon"
               viewBox="0 3 38 28"
               fill="none"
@@ -109,15 +110,13 @@
             <span class="button__text">Like</span>
           </button>
         </div>
-      </section>
-      <footer class="footer">
-        <button type="button" class="button shadow-button save-button">
-          <svg class="floppy-icon button__text" viewBox="0 0 21 21">
-            <use href="./svg/floppy.svg#floppy" />
-          </svg>
-          <span class="button__text">Сохранить на память</span>
-        </button>
-      </footer>
+      </article>
+      <button type="button" class="button shadow-button save-button">
+        <svg class="floppy-icon button__text" viewBox="0 0 21 21">
+          <use href="./svg/floppy.svg#floppy" />
+        </svg>
+        <span class="button__text">Сохранить на память</span>
+      </button>
     </main>
     <script src="./scripts/set-theme.js"></script>
     <script src="./scripts/like.js"></script>
