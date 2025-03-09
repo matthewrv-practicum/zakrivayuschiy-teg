@@ -17,4 +17,254 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+
+  font-family: var(--primary-font), Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1;
+  font-variation-settings: "wght" var(--font-weight, 400);
+
+  background-color: var(--bg-color, #fff);
+  color: var(--main-color, #000);
+  background-image: var(--bg-pattern, url("../svg/pattern-light.svg"));
+  background-size: 4px 4px;
+  background-attachment: fixed;
+  background-repeat: repeat;
+}
+
+.header {
+  text-align: center;
+  padding-block-end: 25px;
+  padding-block-start: clamp(
+    120px,
+    136px - 16 * (1440px - 100dvi) / 1065,
+    136px
+  );
+}
+
+.content-section {
+  border: currentColor solid var(--border-width);
+  background-color: var(--bg-color, #fff);
+  margin: auto;
+  inline-size: var(--content-inline-size);
+  margin-top: 100px;
+}
+
+.header__logo {
+  font-family: var(--accent-font), fantasy;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__title {
+  font-family: var(--accent-font), fantasy;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
+
+  margin-block-start: 17px;
+  font-weight: var(--font-weight);
+}
+
+.header__theme-menu {
+  margin-block-start: 25px;
+}
+
+.theme-menu {
+  font-family: var(--accent-font), fantasy;
+  font-weight: var(--font-weight, 400);
+  font-size: 0.875rem;
+}
+
+.theme-menu__list {
+  margin: auto;
+  inline-size: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: baseline;
+  padding-inline-start: 18px;
+}
+
+.theme-menu__button {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.theme-menu__button::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0 0;
+  inset-block: 100% 0;
+  border: currentColor solid 1px;
+  scale: 0;
+  transform-origin: 0;
+  transition: scale 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  scale: 1;
+}
+
+.theme-menu__item {
+  position: relative;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  transform: translate(calc(-100% - 5px));
+  animation: selected-button 0.5s infinite ease-in-out alternate;
+}
+
+.card__title {
+  font-size: 1.125rem;
+  font-variation-settings: "wght" var(--heading-font-weight);
+  line-height: calc(21 / 18);
+  padding-inline: 10px;
+  padding-block: 5px;
+  border-block-end: none;
+}
+
+.card__picture {
+  display: block;
+  width: 100%;
+  border-block: currentColor solid var(--border-width);
+}
+
+.card__picture-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: 95%;
+}
+
+.card__description {
+  padding: 25px;
+}
+
+.card__paragraph {
+  line-height: calc(21 / 18);
+}
+
+.card__paragraph:not(:last-of-type) {
+  margin-block-end: 27px;
+}
+
+.card__buttons {
+  display: flex;
+  gap: 6px;
+  justify-content: end;
+  align-items: center;
+
+  padding: 25px;
+  padding-block-start: 0;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: transparent solid var(--border-width);
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:hover {
+  cursor: pointer;
+}
+
+.card__icon-button:focus-visible {
+  border-color: currentColor;
+}
+
+.like-icon {
+  display: block;
+  aspect-ratio: 1 / 1;
+  block-size: 34px;
+  inline-size: 34px;
+}
+
+.button {
+  position: relative;
+  background-color: var(--bg-color, #fff);
+  border: var(--main-color, #000) var(--border-width) solid;
+  font-family: var(--accent-font), fantasy;
+  font-size: 0.875rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: currentColor 2px 2px 0;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color, #000);
+  inset: 0;
+  scale: 0 1;
+  transition: scale 0.5s ease-in-out;
+  transform-origin: 0 0;
+}
+
+.button:hover {
+  color: var(--bg-color, #fff);
+  cursor: pointer;
+}
+
+.button:hover::after {
+  scale: 1 1;
+}
+
+.button__text {
+  position: relative;
+  transition: color 1s ease;
+  z-index: 1;
+}
+
+.card__like-button {
+  min-inline-size: 130px;
+  min-block-size: 38px;
+}
+
+.save-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  inline-size: clamp(310px, 310px + 29 * var(--mult), 339px);
+  margin: auto;
+  margin-block-start: 50px;
+  margin-block-end: 100px;
+
+  padding-inline-start: 19px;
+  padding-inline-end: 20px;
+  padding-block: 15px;
+}
+
+.floppy-icon {
+  aspect-ratio: 1 / 1;
+  inline-size: clamp(21px, 28px - 7 * var(--mult), 28px);
 }
