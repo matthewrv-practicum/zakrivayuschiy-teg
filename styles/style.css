@@ -239,6 +239,7 @@
 
 .button {
   position: relative;
+  color: var(--button-text-color, #fff);
   background-color: var(--bg-color, #fff);
   border: var(--main-color, #000) var(--border-width) solid;
   font-family: var(--accent-font), fantasy;
@@ -262,7 +263,6 @@
 }
 
 .button:hover {
-  color: var(--bg-color, #fff);
   cursor: pointer;
 }
 
@@ -274,6 +274,7 @@
   position: relative;
   transition: color 1s ease;
   z-index: 1;
+  mix-blend-mode: difference;
 }
 
 .card__like-button {

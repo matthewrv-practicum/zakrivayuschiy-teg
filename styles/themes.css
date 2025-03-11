@@ -8,6 +8,7 @@
     repeating-linear-gradient(90deg, #000 0px 2px, transparent 2px 4px),
     linear-gradient(#007f0c 0.01%, #004306);
   --main-color: #00cc14;
+  --button-text-color: var(--main-color);
 
   --heart-contour-color: var(--main-color);
   --heart-fill-color: #ff0000;
@@ -23,6 +24,7 @@
     repeating-linear-gradient(90deg, #d3d3d3 0px 2px, transparent 2px 4px),
     linear-gradient(#e7e7e7 0.01%, #1a1a1a);
   --main-color: #000;
+  --button-text-color: var(--bg-color);
 
   --heart-contour-color: var(--main-color);
   --heart-fill-color: #ff0000;
@@ -39,6 +41,7 @@
       repeating-linear-gradient(90deg, #d3d3d3 0px 2px, transparent 2px 4px),
       linear-gradient(#e7e7e7 0.01%, #1a1a1a);
     --main-color: #000;
+    --button-text-color: var(--bg-color);
 
     --heart-contour-color: var(--main-color);
     --heart-fill-color: #ff0000;
