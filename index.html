@@ -568,12 +568,30 @@
           </button>
         </div>
       </article>
-      <button type="button" class="button shadow-button save-button">
+      <button
+        type="button"
+        class="button shadow-button save-button"
+        onclick="window['save-dialog'].showModal()"
+        aria-controls="save-dialog"
+      >
         <svg class="floppy-icon button__text" viewBox="0 0 21 21">
           <use href="./svg/floppy.svg#floppy" />
         </svg>
         <span class="button__text">Сохранить на память</span>
       </button>
+      <dialog id="save-dialog" class="dialog">
+        <svg class="dialog__floppy-icon" viewBox="0 0 21 21" aria-hidden="true">
+          <use href="./svg/floppy.svg#floppy" />
+        </svg>
+        <p class="dialog__paragraph">Вставьте дискету, чтобы продолжить</p>
+        <button
+          type="button"
+          class="button dialog__button"
+          onclick="window['save-dialog'].close()"
+        >
+          <span class="button__text">ок</span>
+        </button>
+      </dialog>
     </main>
     <script src="./scripts/set-theme.js"></script>
     <script src="./scripts/like.js"></script>

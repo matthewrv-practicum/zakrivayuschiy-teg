@@ -238,6 +238,7 @@
 }
 
 .button {
+  min-block-size: 38px;
   position: relative;
   color: var(--button-text-color, #fff);
   background-color: var(--bg-color, #fff);
@@ -249,7 +250,7 @@
 
 .button:focus {
   outline: none;
-  box-shadow: currentColor 2px 2px 0;
+  box-shadow: var(--main-color, #000) 2px 2px 0;
 }
 
 .button::after {
@@ -279,7 +280,6 @@
 
 .card__like-button {
   min-inline-size: 130px;
-  min-block-size: 38px;
 }
 
 .save-button {
@@ -302,4 +302,42 @@
 .floppy-icon {
   aspect-ratio: 1 / 1;
   inline-size: clamp(21px, 28px - 7 * var(--mult), 28px);
+}
+
+.dialog {
+  inline-size: clamp(341px, 341px + 16 * var(--mult), 357px);
+  padding: 30px;
+  font-family: var(--accent-font), fantasy;
+  text-transform: uppercase;
+  color: var(--main-color, #000);
+  background-color: var(--bg-color, #fff);
+  font-size: 0.875rem;
+  border: currentColor solid 2px;
+}
+
+.dialog[open] {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px 30px;
+  align-items: center;
+}
+
+.dialog::backdrop {
+  background-color: #000;
+  opacity: 0.75;
+}
+
+.dialog__floppy-icon {
+  width: 39px;
+}
+
+.dialog__paragraph {
+  line-height: 1.5;
+}
+
+.dialog__button {
+  line-height: 0.9;
+  display: block;
+  block-size: 100%;
+  grid-column: span 2;
 }
