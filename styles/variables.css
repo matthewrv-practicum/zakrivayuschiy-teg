@@ -3,6 +3,7 @@
   --accent-font: "PressStart2P";
   --font-weight: 465;
   --heading-font-weight: 785;
+  --label-stroke-color: #000;
 
   --bg-color: #000;
   --bg-image: repeating-linear-gradient(#000 0px 2px, transparent 2px 4px),

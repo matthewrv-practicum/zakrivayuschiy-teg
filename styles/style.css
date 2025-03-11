@@ -141,10 +141,38 @@
   border-block-end: none;
 }
 
+.card__picture-container {
+  position: relative;
+}
+
 .card__picture {
   display: block;
   width: 100%;
   border-block: currentColor solid var(--border-width);
+}
+
+.card__picture-label {
+  position: absolute;
+  inset-block-start: calc(25px + var(--border-width));
+  inset-inline-end: clamp(13px, 13px + 12 * var(--mult), 25px);
+
+  font-family: var(--accent-font), fantasy;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--main-color);
+
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow: 0 -1px var(--label-stroke-color), 0 1px var(--label-stroke-color),
+    1px 0 var(--label-stroke-color), -1px 0 var(--label-stroke-color);
+}
+
+@supports (-webkit-text-stroke: #fff) {
+  .card__picture-label {
+    -webkit-text-stroke: var(--label-stroke-color) 1px;
+    text-shadow: none;
+  }
 }
 
 .card__picture-image {
