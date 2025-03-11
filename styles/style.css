@@ -187,7 +187,11 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: 95%;
+  object-position: 50%;
+}
+
+.just-start {
+  filter: sepia(40%) invert(100%) saturate(50%) contrast(70%);
 }
 
 .card__description {
@@ -280,6 +284,31 @@
 
 .card__like-button {
   min-inline-size: 130px;
+}
+
+.question-image {
+  filter: brightness(110%) saturate(50%);
+}
+
+.anger-image {
+  filter: saturate(150%);
+}
+
+.space-image {
+  filter: contrast(70%);
+}
+
+.perfectionists-hell-image {
+  object-position: 27%;
+  filter: sepia(20%);
+}
+
+.tools-image {
+  filter: blur(2px);
+}
+
+.determination-image {
+  filter: invert(100%) opacity(0.6) brightness(200%);
 }
 
 .save-button {
