@@ -190,7 +190,7 @@
   object-position: 50%;
 }
 
-.just-start {
+.filter-composite {
   filter: sepia(40%) invert(100%) saturate(50%) contrast(70%);
 }
 
@@ -286,28 +286,31 @@
   min-inline-size: 130px;
 }
 
-.question-image {
+.filter-brightness-desaturate {
   filter: brightness(110%) saturate(50%);
 }
 
-.anger-image {
+.filter-saturate {
   filter: saturate(150%);
 }
 
-.space-image {
+.filter-contrast {
   filter: contrast(70%);
 }
 
 .perfectionists-hell-image {
   object-position: 27%;
+}
+
+.filter-sepia {
   filter: sepia(20%);
 }
 
-.tools-image {
+.filter-blur {
   filter: blur(2px);
 }
 
-.determination-image {
+.filter-invert-opacitry-brightness {
   filter: invert(100%) opacity(0.6) brightness(200%);
 }
 
