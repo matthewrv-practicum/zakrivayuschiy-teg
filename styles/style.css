@@ -23,12 +23,18 @@
   line-height: 1;
   font-variation-settings: "wght" var(--font-weight, 400);
 
-  background-color: var(--bg-color, #fff);
   color: var(--main-color, #000);
-  background-image: var(--bg-pattern, url("../svg/pattern-light.svg"));
-  background-size: 4px 4px;
+  background-image: var(--bg-image);
+  background-size: cover;
   background-attachment: fixed;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
+}
+
+.content-section {
+  border: currentColor solid var(--border-width);
+  background-color: var(--bg-color, #fff);
+  margin: auto;
+  inline-size: var(--content-inline-size);
 }
 
 .header {
@@ -39,14 +45,7 @@
     136px - 16 * (1440px - 100dvi) / 1065,
     136px
   );
-}
-
-.content-section {
-  border: currentColor solid var(--border-width);
-  background-color: var(--bg-color, #fff);
-  margin: auto;
-  inline-size: var(--content-inline-size);
-  margin-top: 100px;
+  margin-block-start: 100px;
 }
 
 .header__logo {
@@ -133,6 +132,14 @@
   animation: selected-button 0.5s infinite ease-in-out alternate;
 }
 
+.main {
+  margin-block-start: 100px;
+}
+
+.card {
+  margin-block-end: 50px;
+}
+
 .card__title {
   font-size: 1.125rem;
   font-variation-settings: "wght" var(--heading-font-weight);
@@ -142,10 +149,37 @@
   border-block-end: none;
 }
 
+.card__picture-container {
+  position: relative;
+}
+
 .card__picture {
   display: block;
   width: 100%;
   border-block: currentColor solid var(--border-width);
+}
+
+.card__picture-label {
+  position: absolute;
+  inset-block-start: calc(25px + var(--border-width));
+  inset-inline-end: clamp(13px, 13px + 12 * var(--mult), 25px);
+
+  font-family: var(--accent-font), fantasy;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--main-color);
+
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow: 0 -1px var(--label-stroke-color), 0 1px var(--label-stroke-color),
+    1px 0 var(--label-stroke-color), -1px 0 var(--label-stroke-color);
+}
+
+@supports (-webkit-text-stroke: #fff) {
+  .card__picture-label {
+    -webkit-text-stroke: var(--label-stroke-color) 1px;
+    text-shadow: none;
+  }
 }
 
 .card__picture-image {
@@ -153,7 +187,11 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: 95%;
+  object-position: 50%;
+}
+
+.filter-composite {
+  filter: sepia(40%) invert(100%) saturate(50%) contrast(70%);
 }
 
 .card__description {
@@ -204,7 +242,9 @@
 }
 
 .button {
+  min-block-size: 38px;
   position: relative;
+  color: var(--button-text-color, #fff);
   background-color: var(--bg-color, #fff);
   border: var(--main-color, #000) var(--border-width) solid;
   font-family: var(--accent-font), fantasy;
@@ -214,7 +254,7 @@
 
 .button:focus {
   outline: none;
-  box-shadow: currentColor 2px 2px 0;
+  box-shadow: var(--main-color, #000) 2px 2px 0;
 }
 
 .button::after {
@@ -228,7 +268,6 @@
 }
 
 .button:hover {
-  color: var(--bg-color, #fff);
   cursor: pointer;
 }
 
@@ -240,11 +279,39 @@
   position: relative;
   transition: color 1s ease;
   z-index: 1;
+  mix-blend-mode: difference;
 }
 
 .card__like-button {
   min-inline-size: 130px;
-  min-block-size: 38px;
+}
+
+.filter-brightness-desaturate {
+  filter: brightness(110%) saturate(50%);
+}
+
+.filter-saturate {
+  filter: saturate(150%);
+}
+
+.filter-contrast {
+  filter: contrast(70%);
+}
+
+.perfectionists-hell-image {
+  object-position: 27%;
+}
+
+.filter-sepia {
+  filter: sepia(20%);
+}
+
+.filter-blur {
+  filter: blur(2px);
+}
+
+.filter-invert-opacitry-brightness {
+  filter: invert(100%) opacity(0.6) brightness(200%);
 }
 
 .save-button {
@@ -267,4 +334,42 @@
 .floppy-icon {
   aspect-ratio: 1 / 1;
   inline-size: clamp(21px, 28px - 7 * var(--mult), 28px);
+}
+
+.dialog {
+  inline-size: clamp(341px, 341px + 16 * var(--mult), 357px);
+  padding: 30px;
+  font-family: var(--accent-font), fantasy;
+  text-transform: uppercase;
+  color: var(--main-color, #000);
+  background-color: var(--bg-color, #fff);
+  font-size: 0.875rem;
+  border: currentColor solid 2px;
+}
+
+.dialog[open] {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px 30px;
+  align-items: center;
+}
+
+.dialog::backdrop {
+  background-color: #000;
+  opacity: 0.75;
+}
+
+.dialog__floppy-icon {
+  width: 39px;
+}
+
+.dialog__paragraph {
+  line-height: 1.5;
+}
+
+.dialog__button {
+  line-height: 0.9;
+  display: block;
+  block-size: 100%;
+  grid-column: span 2;
 }
